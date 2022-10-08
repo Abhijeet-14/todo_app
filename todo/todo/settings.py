@@ -128,3 +128,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # logger
 from logs.logging import LOGGING
+
+# Important
+# Register Custom_Exception_Handler
+REST_FRAMEWORK = {
+    "EXCEPTION_HANDLER": "exceptions.CustomExceptions.custom_exception_handler",
+}

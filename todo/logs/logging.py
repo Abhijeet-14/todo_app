@@ -12,7 +12,7 @@ LOGGING = {
             "style": "{",
         },
         "simple-console": {
-            "format": "[{levelname}] [L{lineno}] [{name}.{funcName}s()] [{name}] - {message}",
+            "format": "[{levelname}] [L{lineno}] [{name}.{funcName}s()] - {message}",
             "style": "{",
         }
     },
@@ -23,8 +23,8 @@ LOGGING = {
             "formatter": "simple-console"
         },
         "all": {
-            "level": "DEBUG",
             "class": "logging.FileHandler",
+            "level": "DEBUG",
             "filename": "./todo/logs/all.log",
             "formatter": "verbose-file",
         },
@@ -32,29 +32,25 @@ LOGGING = {
             "level": "ERROR",
             "class": "logging.FileHandler",
             "filename": "./todo/logs/error.log",
-            "formatter": "basic",
+            "formatter": "verbose-file",
         },
     },
     "loggers": {
         "todo_api": {
             "handlers": ["all", "error"],
             "level": "DEBUG",
-            "propagete": True,
         },
         "common": {
-            "handlers": ["all"],
-            "level": "INFO",
-            "propagete": True,
+            "handlers": ["all", "error"],
+            "level": "DEBUG",
         },
         "exceptions": {
-            "handlers": ["all"],
-            "level": "INFO",
-            "propagete": True,
+            "handlers": ["all", "error"],
+            "level": "DEBUG",
         },
         "root": {"handlers": ["console"], "level": "DEBUG"},
         "django": {
             "handlers": ["all", "error"],
-            # "level": os.getenv("DJANGO_LOG_LEVEL", "INFO"),
             "level": "INFO",
             "propagete": True,
         },
