@@ -17,14 +17,6 @@ class AddTask(APIView):
             logger.info("Enter: Add New Task")
             logger.info(request.data)
 
-            logger.info("info logger")
-            logger.debug("debug logger")
-            logger.warn("warning logger")
-            logger.error("error logger")
-            logger.critical("critical logger")
-
-            val = 1/0
-
             result = {
                 "result": "Test_Result",
                 "isTrue": True
