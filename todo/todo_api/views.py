@@ -33,7 +33,7 @@ class AddTask(APIView):
             logger.info("Exit: Add New Task")
             return Response(result, status=status.HTTP_200_OK)
         except Exception as err:
-            logger.error(f"Exit : Error occured : {str(err)} :: err_ref : {err_ref}")
+            logger.error(f"[err_ref : {err_ref}] Exit : Error occured : {str(err)}")
             return Response(
                 {
                     "message": str(err), 
