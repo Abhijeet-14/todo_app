@@ -29,7 +29,7 @@ def add_new_task(request):
             title = validated_data['title'],
             description = validated_data['description'],
             help = validated_data['help'],
-            priority = validated_data['priority'],
+            # priority = validated_data['priority']
         )
 
         validate_before_save_to_db(instance)

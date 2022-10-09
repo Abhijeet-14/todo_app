@@ -9,7 +9,7 @@ class CreateNewTaskSerializer(serializers.Serializer):
     title = serializers.CharField(required=True)
     description = serializers.CharField()
     help = serializers.CharField(default="No")
-    priority = serializers.ChoiceField(choices=Task.PRIORITY_CHOICES)
+    # priority = serializers.ChoiceField(choices=Task.PRIORITY_CHOICES)
 
 
 class SingleTaskSerializer(serializers.Serializer):
